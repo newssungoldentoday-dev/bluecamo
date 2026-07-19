@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feed — Bluecamo</title>
+<link rel="icon" type="image/png" href="apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="logo">BLUE<span>CAMO</span></div>
+  <nav>
+    <a href="feed.html">Feed</a>
+    <a href="profile.html">Profile</a>
+    <a href="#" id="logoutBtn">Log Out</a>
+  </nav>
+</header>
+
+<main class="feed-wrap">
+  <form id="composer">
+    <textarea id="content" placeholder="What's happening, undercover?" maxlength="2000"></textarea>
+    <button type="submit" class="btn primary">Post</button>
+  </form>
+  <div id="feed"></div>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/feed.js"></script>
+</body>
+</html>
