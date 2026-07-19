@@ -1,0 +1,54 @@
+/* public/css/style.css — Bluecamo shared styles */
+:root{
+  --navy-0:#050810; --navy-1:#0a1220; --navy-2:#101c30;
+  --accent:#4fd1ff; --accent-dim:#2a6f8c;
+  --text:#d8e6f0; --text-dim:#7f96a8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'JetBrains Mono','Courier New',monospace;
+  background:var(--navy-0); color:var(--text); min-height:100vh;
+}
+.topbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 24px;border-bottom:1px solid rgba(79,209,255,0.15);
+}
+.logo{font-weight:700;letter-spacing:2px;color:var(--accent);}
+.logo span{color:var(--text-dim);}
+nav a{color:var(--text-dim);text-decoration:none;margin-left:18px;font-size:0.85rem;}
+nav a:hover{color:var(--accent);}
+.btn{padding:10px 20px;border-radius:6px;border:1px solid var(--accent);color:var(--accent);
+  background:transparent;font-family:inherit;cursor:pointer;font-size:0.85rem;}
+.btn.primary{background:var(--accent);color:var(--navy-0);font-weight:700;}
+.auth-card{
+  max-width:360px;margin:80px auto;padding:32px;background:var(--navy-2);
+  border-radius:12px;border:1px solid rgba(79,209,255,0.15);text-align:center;
+}
+.auth-card h1{color:var(--accent);margin-bottom:24px;letter-spacing:2px;}
+.auth-card h1 span{color:var(--text-dim);}
+.auth-card form{display:flex;flex-direction:column;gap:12px;}
+.auth-card input{
+  padding:10px 12px;border-radius:6px;border:1px solid rgba(79,209,255,0.2);
+  background:var(--navy-1);color:var(--text);font-family:inherit;
+}
+.muted{color:var(--text-dim);font-size:0.85rem;margin-top:16px;}
+.muted a{color:var(--accent-dim);}
+.error{color:#ff6b6b;font-size:0.8rem;margin-top:10px;min-height:1em;}
+.feed-wrap,.profile-wrap{max-width:600px;margin:0 auto;padding:24px;}
+#composer{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
+#composer textarea{
+  padding:12px;border-radius:8px;border:1px solid rgba(79,209,255,0.2);
+  background:var(--navy-2);color:var(--text);font-family:inherit;min-height:80px;resize:vertical;
+}
+.post-card{
+  background:var(--navy-2);border:1px solid rgba(79,209,255,0.12);
+  border-radius:10px;padding:16px;margin-bottom:14px;
+}
+.post-card .author{color:var(--accent);font-size:0.85rem;font-weight:700;}
+.post-card .content{margin:8px 0;line-height:1.5;}
+.post-card .meta{color:var(--text-dim);font-size:0.75rem;display:flex;gap:14px;}
+.profile-card{
+  background:var(--navy-2);border-radius:10px;padding:20px;margin-bottom:20px;
+  border:1px solid rgba(79,209,255,0.12);
+  }
+  
