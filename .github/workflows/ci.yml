@@ -1,0 +1,46 @@
+name: Bluecamo CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: bluecamo
+        ports: ['3306:3306']
+        options: --health-cmd="mysqladmin ping" --health-interval=10s
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Setup C++
+        run: sudo apt-get install -y g++ nasm
+      - name: Install JS deps
+        run: npm install
+      - name: Install Python deps
+        run: pip install -r ml/requirements.txt
+      - name: Run Shell checks
+        run: bash scripts/build.sh
+      - name: Compile C++ core
+        run: g++ core/feed_rank.cpp -O2 -o core/ranker
+      - name: Assemble Assembly
+        run: nasm -f elf64 core/fast_hash.asm -o core/fast_hash.o
+      - name: Compile CoffeeScript
+        run: npx coffee -c public/app.coffee
+      - name: Lint & Test
+        run: |
+          npm run lint
+          python ml/moderation.py --test
