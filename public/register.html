@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register — Bluecamo</title>
+<link rel="icon" type="image/png" href="apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="auth-card">
+  <h1>BLUE<span>CAMO</span></h1>
+  <form id="registerForm">
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password (min 8 chars)" required minlength="8">
+    <button type="submit" class="btn primary">Create Account</button>
+  </form>
+  <p class="muted">Already have an account? <a href="login.html">Log In</a></p>
+  <p id="error" class="error"></p>
+</div>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
