@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bluecamo — Social, Undercover</title>
+<link rel="icon" type="image/png" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  :root{
+    --navy-0:#050810;
+    --navy-1:#0a1220;
+    --navy-2:#101c30;
+    --camo-a:#16283f;
+    --camo-b:#1f3a56;
+    --camo-c:#2c5273;
+    --accent:#4fd1ff;
+    --accent-dim:#2a6f8c;
+    --text:#d8e6f0;
+    --text-dim:#7f96a8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'JetBrains Mono', 'Courier New', monospace;
+    background:var(--navy-0);
+    color:var(--text);
+    min-height:100vh;
+    background-image:
+      radial-gradient(ellipse 400px 250px at 10% 15%, var(--camo-a) 0%, transparent 60%),
+      radial-gradient(ellipse 350px 300px at 80% 10%, var(--camo-b) 0%, transparent 55%),
+      radial-gradient(ellipse 500px 350px at 60% 60%, var(--camo-a) 0%, transparent 60%),
+      radial-gradient(ellipse 300px 250px at 20% 80%, var(--camo-c) 0%, transparent 55%),
+      radial-gradient(ellipse 450px 300px at 95% 85%, var(--camo-b) 0%, transparent 60%);
+    background-color:var(--navy-1);
+    background-attachment:fixed;
+  }
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:22px 28px;border-bottom:1px solid rgba(79,209,255,0.15);
+    background:rgba(5,8,16,0.55);backdrop-filter:blur(4px);
+  }
+  .logo{font-weight:700;font-size:1.1rem;letter-spacing:2px;color:var(--accent);}
+  .logo span{color:var(--text-dim);}
+  nav a{color:var(--text-dim);text-decoration:none;margin-left:22px;font-size:0.85rem;}
+  nav a:hover{color:var(--accent);}
+  .hero{
+    padding:90px 28px 70px;max-width:820px;margin:0 auto;text-align:center;
+  }
+  .tag{
+    display:inline-block;font-size:0.75rem;letter-spacing:3px;color:var(--accent-dim);
+    border:1px solid rgba(79,209,255,0.3);padding:4px 12px;border-radius:20px;margin-bottom:22px;
+  }
+  h1{font-size:2.6rem;line-height:1.15;color:#fff;margin-bottom:18px;}
+  h1 em{font-style:normal;color:var(--accent);}
+  .sub{color:var(--text-dim);font-size:1rem;max-width:520px;margin:0 auto 34px;line-height:1.6;}
+  .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{
+    padding:12px 26px;border-radius:6px;font-size:0.85rem;text-decoration:none;
+    border:1px solid var(--accent);color:var(--accent);letter-spacing:1px;
+  }
+  .btn.primary{background:var(--accent);color:var(--navy-0);font-weight:700;}
+  .btn:hover{opacity:0.85;}
+  .features{
+    max-width:1000px;margin:0 auto;padding:40px 28px 90px;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;
+  }
+  .card{
+    background:rgba(16,28,48,0.6);border:1px solid rgba(79,209,255,0.12);
+    border-radius:10px;padding:22px;
+  }
+  .card .icon{font-size:1.4rem;color:var(--accent);margin-bottom:10px;}
+  .card h3{font-size:0.95rem;color:#fff;margin-bottom:8px;letter-spacing:0.5px;}
+  .card p{font-size:0.82rem;color:var(--text-dim);line-height:1.55;}
+  footer{
+    text-align:center;padding:30px;color:var(--text-dim);font-size:0.75rem;
+    border-top:1px solid rgba(79,209,255,0.1);
+  }
+  footer a{color:var(--accent-dim);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">BLUE<span>CAMO</span></div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="https://github.com/newssungoldentoday-dev/bluecamo">GitHub</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="tag">SOCIAL &middot; UNDERCOVER</div>
+  <h1>Blend in. <em>Speak up.</em></h1>
+  <p class="sub">
+    Bluecamo is a social platform built for signal over noise —
+    ML-assisted feeds, a lightweight core, and a public layer
+    that stays out of your way.
+  </p>
+  <div class="cta">
+    <a class="btn primary" href="#features">Explore Features</a>
+    <a class="btn" href="https://github.com/newssungoldentoday-dev/bluecamo">View Source</a>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="card">
+    <div class="icon">◧</div>
+    <h3>Core Engine</h3>
+    <p>A lean server backbone handling posts, sessions, and data — built to run anywhere without heavy dependencies.</p>
+  </div>
+  <div class="card">
+    <div class="icon">◈</div>
+    <h3>ML Layer</h3>
+    <p>Feed ranking and content signals powered by a dedicated ML module, kept modular and swappable.</p>
+  </div>
+  <div class="card">
+    <div class="icon">◫</div>
+    <h3>Public Front</h3>
+    <p>A clean public-facing layer — fast to load, minimal by design, camo-toned to stay easy on the eyes.</p>
+  </div>
+  <div class="card">
+    <div class="icon">◨</div>
+    <h3>Open Source</h3>
+    <p>MIT licensed and fully open on GitHub. Fork it, self-host it, or contribute back.</p>
+  </div>
+</section>
+
+<footer>
+  Blue Camo Social Media — <a href="https://github.com/newssungoldentoday-dev/bluecamo">newssungoldentoday-dev/bluecamo</a>
+</footer>
+
+</body>
+  </html>
